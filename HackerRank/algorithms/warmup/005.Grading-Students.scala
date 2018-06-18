@@ -2,27 +2,19 @@ import java.io.PrintWriter
 
 object Solution {
 
-    /*
-     * Complete the gradingStudents function below.
-     */
-    def gradingStudents(grades: Array[Int]): Array[Int] = {
-        /*
-         * Write your code here.
-         */
-        val finalGrades = grades.map(professorGradeRule)
-        println(finalGrades)
 
-        finalGrades.foreach{println}
+    def gradingStudents(grades: Array[Int]): Array[Int] = {
+        val finalGrades = grades.map(GradeRule)
+        return finalGrades
     }    
         
-    def professorGradeRule(grade: Int): Int = {
-        val multiply5 = grade / 5
-        val roundBy5 = if(grade % 5 == 0) multiply5 * 5 else (multiply5 + 1) * 5
+    def GradeRule(grade: Int): Int = {
+        val multipleOf5 = grade / 5
+        val roundBy5 = if(grade % 5 == 0) multipleOf5 * 5 else (multipleOf5 + 1) * 5
         if(roundBy5 - grade < 3 && grade >= 38) roundBy5 else grade
       }
 
     
-
     def main(args: Array[String]) {
         val scan = scala.io.StdIn
 
