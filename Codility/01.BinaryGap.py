@@ -7,8 +7,8 @@
 
 def binary_gap(value):
     n = bin(value)[2:]
-    index_list = []
 
+    index_list = []
     for idx, value in enumerate(n):
         if value == '1':
             index_list.append(idx)
@@ -17,6 +17,8 @@ def binary_gap(value):
     for i in range(len(index_list)-1):
         close_list.append(index_list[i+1] - index_list[i] - 1)
     return max(close_list)
+
+
 
 assert(binary_gap(5) == 1)
 assert(binary_gap(1004) == 1)
