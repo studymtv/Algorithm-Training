@@ -19,8 +19,8 @@ def binary_gap(value):
     return max(close_list)
 
 
-
 assert(binary_gap(5) == 1)
 assert(binary_gap(1004) == 1)
 assert(binary_gap(4213) == 5)
 assert(binary_gap(9999) == 4)
+
